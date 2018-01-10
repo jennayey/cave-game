@@ -9,44 +9,44 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1758172680639126}
+  m_RootGameObject: {fileID: 1792684324018626}
   m_IsPrefabParent: 1
---- !u!1 &1758172680639126
+--- !u!1 &1792684324018626
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4292619166641876}
-  - component: {fileID: 212331754819055374}
-  - component: {fileID: 61480845011648530}
+  - component: {fileID: 4172338358964388}
+  - component: {fileID: 212844606708925140}
+  - component: {fileID: 61333401718293914}
   m_Layer: 8
-  m_Name: Food
-  m_TagString: Food
+  m_Name: Battery
+  m_TagString: Battery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4292619166641876
+--- !u!4 &4172338358964388
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1758172680639126}
+  m_GameObject: {fileID: 1792684324018626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.084863, y: -3.8384178, z: 0.11921487}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61480845011648530
+--- !u!61 &61333401718293914
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1758172680639126}
+  m_GameObject: {fileID: 1792684324018626}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -66,12 +66,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 1.28}
   m_EdgeRadius: 0
---- !u!212 &212331754819055374
+--- !u!212 &212844606708925140
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1758172680639126}
+  m_GameObject: {fileID: 1792684324018626}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -100,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: 561814355
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300114, guid: 413202daec2ffa64c8385489378756e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a772b30f7d550544b62a3a31652776c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

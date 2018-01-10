@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour {
 	private float batteryLife = 0f; // PUT IN GAME MANAGER
 //	private int carriedBattery = 0; // PUT IN GAME MANAGER
 	private Vector3 flashlightSize;
-
 	public GameObject start, start2;
 	
 	// Use this for initialization
@@ -31,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 		toast = GameObject.Find("Toast").GetComponent<Text>();
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");
-		batteryLife = 10f;
+		batteryLife =20f;
 
 		if (lightChild!= null) {
 			Debug.Log ("Found Child");
@@ -94,9 +93,6 @@ public class PlayerMovement : MonoBehaviour {
 			toastText=" ";
 			setToastText();
 		}
-
-		
-		
 	}
 	
 	void FixedUpdate () {
@@ -113,13 +109,12 @@ public class PlayerMovement : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		//if collides with food
-		if (other.gameObject.CompareTag ("Food")) {
+		if (other.gameObject.CompareTag ("Battery")) {
 			other.gameObject.SetActive (false);
-			batteryLife +=2f;
+			batteryLife +=5f;
 			//Debug.Log ("You acquired battery");
 			toastText = "YOU ACQUIRED BATTERY";
-			setToastText();
-				
+			setToastText();			
 		}
 		//collision with exit object
 		if (other.gameObject.CompareTag ("Exit")) {

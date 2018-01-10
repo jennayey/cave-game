@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Exit
   - Food
+  - Enemy
+  - Battery
   layers:
   - Default
   - TransparentFX
