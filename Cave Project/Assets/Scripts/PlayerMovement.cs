@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour {
 
 	public Text flashlightStatus, toast;
+	
+	SpriteRenderer spRenderer;
+	
 	public float speed;
+	private int health; 
+	// private int damageAttack;
 	private int rotateFace = 180;
 	private Rigidbody2D rb2d;
 	private Vector2 tryMove;
@@ -19,42 +24,49 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject start, start2;
 	
 	// Use this for initialization
-	
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D>();
 		animator = GetComponent <Animator>();
 		//start = GetComponent<GameObject>();
 		//start2 = GetComponent<GameObject>();
 		//initialize flashlight size
+		spRenderer= GetComponent<SpriteRenderer>();
 		flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
 		toast = GameObject.Find("Toast").GetComponent<Text>();
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");
 		batteryLife =20f;
+		health = 100;
+		// damageAttack = 10;
 
 		if (lightChild!= null) {
-			Debug.Log ("Found Child");
+			// Debug.Log ("Found Child");
 
 			if (lightChild.gameObject.activeInHierarchy !=true) {
 				lightChild.gameObject.SetActive (true);
 			}
 			lightChild.gameObject.transform.localScale = flashlightSize;
 		}
-		else 
-			Debug.Log ("Not found");
+		// else 
+		// 	Debug.Log ("Not found");
 		
 		if (start != null){
-			Debug.Log ("GameObject Found");
+			// Debug.Log ("GameObject Found");
 			transform.position = start.gameObject.transform.position;
 		}
-		else
-			Debug.Log ("GameObject not Found");	
+		// else
+		// 	Debug.Log ("GameObject not Found");	
 	}
 	// Update is called once per frame
 	void Update () {
 		//sets the character movement to zero
 		tryMove = Vector2.zero;
 		
+		if (Input.GetKey(KeyCode.Space)) {
+			animator.SetTrigger ("playerAttack");
+			spRenderer.color = Color.red;
+			//spRenderer.color = Color.white;
+		}
 		//move left
 		if (Input.GetKey (KeyCode.A)) {
 			tryMove += Vector2Int.left;
@@ -72,8 +84,8 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetKey (KeyCode.S))
 			tryMove += Vector2Int.down;	
 		//player attack
-		if (Input.GetKeyDown (KeyCode.Space)) 
-			animator.SetTrigger ("playerAttack");
+		
+			
 		//Lights turn on
 		if (Input.GetKey(KeyCode.LeftShift)){
 			if (batteryLife<=0f){
@@ -93,6 +105,8 @@ public class PlayerMovement : MonoBehaviour {
 			toastText=" ";
 			setToastText();
 		}
+
+		Debug.Log ("HEALTH IS: " + health);
 	}
 	
 	void FixedUpdate () {
@@ -103,7 +117,7 @@ public class PlayerMovement : MonoBehaviour {
 			animator.SetBool ("playerRun", false);
 		//clamps the movement so it doesn't slide 
 		rb2d.velocity = Vector2.ClampMagnitude(tryMove, 1f) * speed;
-		Debug.Log ("Bttery Left is " + batteryLife);
+		// Debug.Log ("Battery Left is " + batteryLife);
 		setFlashlightStatusText ();
 	}
 
@@ -118,22 +132,27 @@ public class PlayerMovement : MonoBehaviour {
 		}
 		//collision with exit object
 		if (other.gameObject.CompareTag ("Exit")) {
-			Debug.Log ("Collided with exit");
+			// Debug.Log ("Collided with exit");
 			transform.position =  start2.transform.localPosition;
 		}
 	}
-	void addLightPower () {
+	private void addLightPower () {
 				lightChild.gameObject.transform.localScale = new Vector3(5,5,0);
 	}
-	void reducePower () {
+	private void reducePower () {
 				lightChild.gameObject.transform.localScale = new Vector3(2,2,0);
 	}
 
-	void setFlashlightStatusText (){
+	private void setFlashlightStatusText (){
 		flashlightStatus.text ="BATTERY STATUS: " + batteryLife.ToString("F0")+"s LEFT";
 	}
 
-	void setToastText (){
+	private void setToastText (){
 		toast.text = toastText;
 	}
+
+	public void loseHealth (int damage) {
+		health -=damage;
+	}
+	
 }
