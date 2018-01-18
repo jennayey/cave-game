@@ -20,8 +20,12 @@ public class PlayerHealth : MonoBehaviour {
 			health-=damage;
 		}
 
-		if (health ==0) {
+		if (health==0) {
 			//dead//Dim screens
 		}
+	}
+
+	void Die () {
+		Debug.Log("Dead");
 	}
 }

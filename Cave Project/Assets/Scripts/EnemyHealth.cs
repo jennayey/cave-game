@@ -14,21 +14,22 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Debug.Log ("ENEMY HEALTH: " + health);
+		if (health==0)
+			animator.SetTrigger("isDead");
 	}
 
-	void takeDamage(int damage) {
+	public void takeDamage(int damage) {
 		if (health>=1) {
 			health-=damage;
 		}
-		else if (health==0){
-			Die();
-		}
 	}
 
-	void Die () {
+	public void Die () {
+		Debug.Log ("DYING");
 		//play death animation
-		animator.SetTrigger("isDead");
+		Destroy(gameObject);
 		//Destroy
 	}
+
 }

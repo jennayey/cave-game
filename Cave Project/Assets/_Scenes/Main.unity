@@ -1448,6 +1448,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &310261681 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1583302715931318, guid: 0cf5b9cf9faf5654a8012ceafc560fe3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2017898553}
+--- !u!114 &310261688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310261681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a215c0e05a6da5448c25154592ed293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!4 &328562184 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4944805928513822, guid: 0cf5b9cf9faf5654a8012ceafc560fe3,
@@ -5095,7 +5112,12 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1357851466746306, guid: 0cf5b9cf9faf5654a8012ceafc560fe3, type: 2}
+      propertyPath: m_TagString
+      value: playerWeapon
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114662680339226120, guid: 0cf5b9cf9faf5654a8012ceafc560fe3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0cf5b9cf9faf5654a8012ceafc560fe3, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2060153834

@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour {
 
 
 	public int damage = 1;
+	public int playerDamage = 5;
 	bool playerNear;
 	Animator animator; //reference
 	GameObject player;
@@ -33,6 +34,10 @@ public class EnemyAttack : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")){
 				//add animation event after animation to run a code
 				playerNear = true;
+		}
+		if (other.gameObject.CompareTag("playerWeapon")) {
+			enemyHealth.takeDamage(playerDamage);
+			animator.SetTrigger("isAttacked");
 		}
 	}
 
