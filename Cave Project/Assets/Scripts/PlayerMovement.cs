@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
-
+	#region Variables
 	public Text flashlightStatus, toast;
 	
 	SpriteRenderer spRenderer;
 	
 	public float speed;
-	private int health; 
 	// private int damageAttack;
 	private int rotateFace = 180;
 	private Rigidbody2D rb2d;
@@ -22,7 +21,7 @@ public class PlayerMovement : MonoBehaviour {
 //	private int carriedBattery = 0; // PUT IN GAME MANAGER
 	private Vector3 flashlightSize;
 	public GameObject start, start2;
-	
+	#endregion
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D>();
@@ -36,7 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");
 		batteryLife =20f;
-		health = 100;
+		
 		// damageAttack = 10;
 
 		if (lightChild!= null) {
@@ -61,6 +60,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
 		//sets the character movement to zero
 		tryMove = Vector2.zero;
+	
 		
 		if (Input.GetKey(KeyCode.Space)) {
 			animator.SetTrigger ("playerAttack");
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour {
 			setToastText();
 		}
 
-		Debug.Log ("HEALTH IS: " + health);
+	
 	}
 	
 	void FixedUpdate () {
@@ -151,8 +151,6 @@ public class PlayerMovement : MonoBehaviour {
 		toast.text = toastText;
 	}
 
-	public void loseHealth (int damage) {
-		health -=damage;
-	}
+	
 	
 }

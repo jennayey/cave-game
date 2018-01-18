@@ -108,8 +108,10 @@
      <Compile Include="Assets\Scripts\ElevatorControlelr.cs" />
      <Compile Include="Assets\Scripts\ElevatorTrigger.cs" />
      <Compile Include="Assets\Scripts\EnemyAttack.cs" />
-     <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\UpdateToast.cs" />
      <Compile Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Scripts\TintTextureGenerator.cs" />
