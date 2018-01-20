@@ -35,7 +35,7 @@ public class EnemyAttack : MonoBehaviour {
 				//add animation event after animation to run a code
 				playerNear = true;
 		}
-		if (other.gameObject.CompareTag("playerWeapon")) {
+		if (other.gameObject.CompareTag("playerWeapon")&& enemyHealth.health>0) {
 			enemyHealth.takeDamage(playerDamage);
 			animator.SetTrigger("isAttacked");
 		}

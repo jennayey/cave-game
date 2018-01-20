@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour {
 		// if player is alive 
 		// check distance if faraway 
 		// Debug.Log ("las pos " + lasPOs +  "   trans x: " + transform.position.x);
-		if (enterTrigger && health>0) {
+		if (enterTrigger && health!=0) {
 			if (distance > 1f ) {
 				if (lasPOs < transform.position.x) {
 					transform.localEulerAngles = new Vector2 (transform.rotation.y, 180);

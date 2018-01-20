@@ -1,22 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour {
 	#region Variables
-	public Text flashlightStatus, toast;
+	// public Text flashlightStatus, toast;
 	
 	SpriteRenderer spRenderer;
-	
+	PlayerHealth playerHealth;
 	public float speed;
 	// private int damageAttack;
+	private int foodValue = 20;
 	private int rotateFace = 180;
 	private Rigidbody2D rb2d;
 	private Vector2 tryMove;
 	private Animator animator;
 	private Transform lightChild;
-	private string toastText;
 	private float batteryLife = 0f; // PUT IN GAME MANAGER
 //	private int carriedBattery = 0; // PUT IN GAME MANAGER
 	private Vector3 flashlightSize;
@@ -30,16 +29,15 @@ public class PlayerMovement : MonoBehaviour {
 		//start2 = GetComponent<GameObject>();
 		//initialize flashlight size
 		spRenderer= GetComponent<SpriteRenderer>();
-		flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
-		toast = GameObject.Find("Toast").GetComponent<Text>();
+		playerHealth = GetComponent <PlayerHealth>();
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");
-		batteryLife =20f;
+		
 		
 		// damageAttack = 10;
 
 		if (lightChild!= null) {
-			// Debug.Log ("Found Child");
+			 Debug.Log ("Found Child");
 
 			if (lightChild.gameObject.activeInHierarchy !=true) {
 				lightChild.gameObject.SetActive (true);
@@ -58,8 +56,10 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		
 		//sets the character movement to zero
 		tryMove = Vector2.zero;
+		batteryLife = LevelManager.instance.batteryLife;
 	
 		
 		if (Input.GetKey(KeyCode.Space)) {
@@ -85,28 +85,26 @@ public class PlayerMovement : MonoBehaviour {
 			tryMove += Vector2Int.down;	
 		//player attack
 		
+
+		
 			
 		//Lights turn on
 		if (Input.GetKey(KeyCode.LeftShift)){
+			Debug.Log ("Shift Down");
 			if (batteryLife<=0f){
-				toastText = "YOU DON'T HAVE BATTERIES";
-				setToastText();
 				//Debug.Log ("You don't have batteries");
 				reducePower();
 			}
-			else {
+			else if (batteryLife >0) {
 				addLightPower();
-				batteryLife = Mathf.MoveTowards (batteryLife, 0f ,Time.deltaTime);
+				
+				LevelManager.instance.batteryLife = Mathf.MoveTowards (batteryLife, 0f ,Time.deltaTime);
 			}	
 		}
 		//light turn off	
 		if (Input.GetKeyUp(KeyCode.LeftShift)) {
-			reducePower();
-			toastText=" ";
-			setToastText();
+			reducePower();	
 		}
-
-	
 	}
 	
 	void FixedUpdate () {
@@ -118,39 +116,47 @@ public class PlayerMovement : MonoBehaviour {
 		//clamps the movement so it doesn't slide 
 		rb2d.velocity = Vector2.ClampMagnitude(tryMove, 1f) * speed;
 		// Debug.Log ("Battery Left is " + batteryLife);
-		setFlashlightStatusText ();
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
 		//if collides with food
 		if (other.gameObject.CompareTag ("Battery")) {
 			other.gameObject.SetActive (false);
-			batteryLife +=5f;
-			//Debug.Log ("You acquired battery");
-			toastText = "YOU ACQUIRED BATTERY";
-			setToastText();			
+			LevelManager.instance.addBatteryTime();
+		}
+		else if (other.gameObject.CompareTag ("Food")) {
+			other.gameObject.SetActive (false);
+			LevelManager.instance.addFoodCount();
+		}
+		else if (other.gameObject.CompareTag ("Key_Reg")) {
+			other.gameObject.SetActive (false);
+			LevelManager.instance.addRegKey();
+		}
+		else if (other.gameObject.CompareTag ("Key_Spc")) {
+			other.gameObject.SetActive (false);
+			LevelManager.instance.addSpcKey();
 		}
 		//collision with exit object
-		if (other.gameObject.CompareTag ("Exit")) {
+		else if (other.gameObject.CompareTag ("Exit")) {
 			// Debug.Log ("Collided with exit");
 			transform.position =  start2.transform.localPosition;
 		}
 	}
 	private void addLightPower () {
-				lightChild.gameObject.transform.localScale = new Vector3(5,5,0);
+		lightChild.gameObject.transform.localScale = new Vector3(5,5,0);
 	}
 	private void reducePower () {
 				lightChild.gameObject.transform.localScale = new Vector3(2,2,0);
 	}
-
-	private void setFlashlightStatusText (){
-		flashlightStatus.text ="BATTERY STATUS: " + batteryLife.ToString("F0")+"s LEFT";
+	private void eatFood (){
+		if (LevelManager.instance.foodCount >0) {
+			playerHealth.health+=foodValue;
+			LevelManager.instance.foodCount--;
+		}
+		else if (LevelManager.instance.foodCount ==0 ) {
+			LevelManager.instance.toastText = "You don't have food anymore";
+			LevelManager.instance.setToastText();
+		}
 	}
-
-	private void setToastText (){
-		toast.text = toastText;
-	}
-
-	
 	
 }
