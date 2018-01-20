@@ -10,11 +10,10 @@ public class EnemyAttack : MonoBehaviour {
 	bool playerNear;
 	Animator animator; //reference
 	GameObject player;
-	EnemyMovement enemyMovement;
+	
 	EnemyHealth enemyHealth;
 	public PlayerHealth playerHealth;
 	void Awake () {
-		enemyMovement = GetComponentInParent<EnemyMovement>();
 		enemyHealth = GetComponentInParent<EnemyHealth>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerHealth = player.GetComponent<PlayerHealth>();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour {
 	#region Variables
 	// public Text flashlightStatus, toast;
@@ -68,26 +69,21 @@ public class PlayerMovement : MonoBehaviour {
 			//spRenderer.color = Color.white;
 		}
 		//move left
-		if (Input.GetKey (KeyCode.A)) {
+		if (Input.GetKey (KeyCode.LeftArrow)) {
 			tryMove += Vector2Int.left;
 			transform.localEulerAngles = new Vector2 (transform.rotation.x, rotateFace);
 		}
 		//move right
-		if (Input.GetKey (KeyCode.D)) {
+		if (Input.GetKey (KeyCode.RightArrow)) {
 			tryMove += Vector2Int.right;
 			transform.localEulerAngles = new Vector2 (transform.rotation.x, 0); //zero faces back to original
 		}
 		//move up
-		if (Input.GetKey (KeyCode.W))
+		if (Input.GetKey (KeyCode.UpArrow))
 			tryMove += Vector2Int.up;
 		//move down
-		if (Input.GetKey (KeyCode.S))
+		if (Input.GetKey (KeyCode.DownArrow))
 			tryMove += Vector2Int.down;	
-		//player attack
-		
-
-		
-			
 		//Lights turn on
 		if (Input.GetKey(KeyCode.LeftShift)){
 			Debug.Log ("Shift Down");
@@ -122,7 +118,7 @@ public class PlayerMovement : MonoBehaviour {
 		//if collides with food
 		if (other.gameObject.CompareTag ("Battery")) {
 			other.gameObject.SetActive (false);
-			LevelManager.instance.addBatteryTime();
+			LevelManager.instance.addBattery();
 		}
 		else if (other.gameObject.CompareTag ("Food")) {
 			other.gameObject.SetActive (false);
@@ -148,7 +144,7 @@ public class PlayerMovement : MonoBehaviour {
 	private void reducePower () {
 				lightChild.gameObject.transform.localScale = new Vector3(2,2,0);
 	}
-	private void eatFood (){
+	public void eatFood (){
 		if (LevelManager.instance.foodCount >0) {
 			playerHealth.health+=foodValue;
 			LevelManager.instance.foodCount--;
