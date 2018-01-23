@@ -65,7 +65,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 		if (Input.GetKey(KeyCode.Space)) {
 			animator.SetTrigger ("playerAttack");
-			spRenderer.color = Color.red;
+			// spRenderer.color = Color.red;
 			//spRenderer.color = Color.white;
 		}
 		//move left
@@ -147,7 +147,6 @@ public class PlayerMovement : MonoBehaviour {
 	public void eatFood (){
 		if (LevelManager.instance.foodCount >0) {
 			playerHealth.health+=foodValue;
-			LevelManager.instance.foodCount--;
 		}
 		else if (LevelManager.instance.foodCount ==0 ) {
 			LevelManager.instance.toastText = "You don't have food anymore";

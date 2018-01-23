@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour {
 	CanvasGroup itemUI;
 	public Slider batterySlider;
 	float waitTime = 3f;
-	public Text flashlightStatus, toast;
+	public Text  toast;
 	[HideInInspector] public string toastText;
 	public static LevelManager instance=null;	
 	[HideInInspector] public bool playerCanMove;
@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour {
 		else if (instance!=this) {
 			Destroy(gameObject);
 		}
-		batteryLife = 20f;
+		batteryLife = 60f;
 		//Get title up
 	}
 	// Use this for initialization
@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour {
 		spawnEnemy();
 		itemUI = GameObject.Find("ItemsUI").GetComponent<CanvasGroup>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-		flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
+		// flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
 		toast = GameObject.Find("Toast").GetComponent<Text>();
 		
 		waitTime = 3f;
@@ -51,14 +51,11 @@ public class LevelManager : MonoBehaviour {
 		itemList[1] = GameObject.Find("sKeyUIText").GetComponent<Text>();
 		itemList[2] = GameObject.Find("foodUIText").GetComponent<Text>();
 		itemList[3] = GameObject.Find("batteryUIText").GetComponent<Text>();
-		
-	
 	}
 
 	void assignLadderPoints () {
 		//asign level shit;
 	}
-
 	void spawnEnemy () {
 		for (int x = 0; x < 3 ; x++)
 		Instantiate (enemy, enemySpawnPoints[x].position, enemySpawnPoints[x].rotation);
@@ -67,8 +64,7 @@ public class LevelManager : MonoBehaviour {
 	void Update () {
 
 		batterySlider.value = batteryLife;
-		
-		setFlashlightStatusText ();
+		// setFlashlightStatusText ();
 		waitTime = Mathf.MoveTowards(waitTime,0f, Time.deltaTime);
 		// Debug.Log ("wait: " + waitTime);
 		if (waitTime == 0f) {
@@ -78,25 +74,20 @@ public class LevelManager : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Tab)) {
 			itemUI.alpha =1;
 		}
-
 		if (Input.GetKeyUp (KeyCode.Tab)) {
 			itemUI.alpha =0;
 		}
-
 		if (Input.GetKeyDown (KeyCode.R)) {
 		
 			if (batteryCount==0) {
 				toastText = "You don't have batteries";
 				setToastText();
 			}
-
 			else if (batteryCount>0) {
 				addBatteryTime();
 				batteryCount--;
 			}
-			
 		}
-
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (foodCount==0) {
 				toastText = "You don't have food bars";
@@ -108,7 +99,6 @@ public class LevelManager : MonoBehaviour {
 				foodCount--;
 			}
 		}
-
 		itemList[0].text = rKey.ToString();
 		itemList[1].text = sKey.ToString();
 		itemList[2].text = foodCount.ToString();
@@ -116,10 +106,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void addBattery() {
-		
 		toastText = "You acquired battery!";
 		batteryCount++;
-		
 		setToastText();
 		// Debug.Log ("Batt count " + batteryCount);
 	}
@@ -131,7 +119,6 @@ public class LevelManager : MonoBehaviour {
 		toastText = "You acquired a Food Bar!";
 		setToastText();
 		foodCount++;
-		
 	}
 	public void addHealth () {
 		player.eatFood();
@@ -140,25 +127,18 @@ public class LevelManager : MonoBehaviour {
 		toast.text = toastText;
 		waitTime = 3f;
 	}
-
-	void setFlashlightStatusText (){
-		flashlightStatus.text ="BATTERY STATUS: " + batteryLife.ToString("F0")+"s LEFT";
-	}
-
+	// void setFlashlightStatusText (){
+	// 	flashlightStatus.text ="BATTERY STATUS: " + batteryLife.ToString("F0")+"s LEFT";
+	// }
 	public void addSpcKey (){
-		toastText = "You acquired a Special Key!";
-		
+		toastText = "You acquired a Special Key!";	
 		setToastText();
 		sKey++;
-		
 	}
 	public void addRegKey (){
-		
 		toastText = "You acquired a Key!";
 		setToastText();
-		rKey++;
-		
-		
+		rKey++;		
 		Debug.Log ("Key count " + rKey);
 	}
 

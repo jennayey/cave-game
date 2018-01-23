@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Door_R_DOWN
+  m_Controller: {fileID: 9100000, guid: 447c3ec6101caed4ebbcc770a2ed67bb, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 8fa27e4c408adb5439efef66b756e3a1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 06fc8f01ca464b940bc5bcc27d482ab3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4021cfaab502305449f9c1ba49b72888, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ad0928c09a2c80b4baabe8e62373fda3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: fd93fc19bc35e0e48948cf0a5adeb278, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 371b3fdc02e96434d8a4746c065d03d8, type: 2}

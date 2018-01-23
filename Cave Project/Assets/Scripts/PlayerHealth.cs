@@ -8,17 +8,17 @@ public class PlayerHealth : MonoBehaviour {
 	// Use this for initialization
 	public Image damageImage;
 	public Slider healthSlider;
-	public Color damageColor  = new Color (1f, 0 , 0 , .1f);
+	public Color damageColor  = new Color (1f, 0 , 0 , .5f);
 	public Color deathColor = new Color (0 , 0, 0 , .5f);
 	public int health = 100;
 	void Start () {
-		damageImage.color = Color.clear;
+	//damageImage.color = Color.clear;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		healthSlider.value = health;
-		damageImage.color = Color.Lerp (damageImage.color, Color.clear, 5f*Time.deltaTime);
+		
 	}	
 
 	public void takeDamage (int damage) {
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour {
 		else if (health==0) {
 			damageImage.color = deathColor;
 		}
-		
+		damageImage.color = Color.Lerp (damageImage.color, Color.clear, 5f*Time.deltaTime);
 			
 		
 	}

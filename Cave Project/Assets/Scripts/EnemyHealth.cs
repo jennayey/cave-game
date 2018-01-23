@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log ("ENEMY HEALTH: " + health);
+		// Debug.Log ("ENEMY HEALTH: " + health);
 		if (health==0)
 			animator.SetTrigger("isDead");
 	}
@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	public void Die () {
-		Debug.Log ("DYING");
+		// Debug.Log ("DYING");
 		//play death animation
 		Destroy(gameObject);
 		//Destroy

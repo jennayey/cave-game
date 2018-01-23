@@ -59,3 +59,6 @@ TagManager:
   - name: Units
     uniqueID: 3592608599
     locked: 0
+  - name: Light
+    uniqueID: 3655074105
+    locked: 0

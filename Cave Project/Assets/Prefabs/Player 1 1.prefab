@@ -20,10 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4190492800913366}
   - component: {fileID: 61478792824248562}
-  - component: {fileID: 114662680339226120}
   m_Layer: 8
   m_Name: Attack
-  m_TagString: Untagged
+  m_TagString: playerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,6 +41,7 @@ GameObject:
   - component: {fileID: 61379496046683644}
   - component: {fileID: 114119412854278166}
   - component: {fileID: 114129895610556588}
+  - component: {fileID: 114361685824451224}
   m_Layer: 8
   m_Name: Player 1 1
   m_TagString: Player
@@ -79,7 +79,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4190492800913366
 Transform:
   m_ObjectHideFlags: 1
@@ -233,8 +233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b227260298dd5974fb4daf37885bd8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlightStatus: {fileID: 0}
-  toast: {fileID: 0}
   speed: 4
   start: {fileID: 0}
   start2: {fileID: 0}
@@ -249,17 +247,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf612fba96ceacc4898a3c4a9635ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114662680339226120
+  damageImage: {fileID: 0}
+  healthSlider: {fileID: 0}
+  damageColor: {r: 1, g: 0, b: 0, a: 0.1}
+  deathColor: {r: 0, g: 0, b: 0, a: 0.5}
+  health: 100
+--- !u!114 &114361685824451224
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1357851466746306}
+  m_GameObject: {fileID: 1583302715931318}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a215c0e05a6da5448c25154592ed293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
 --- !u!212 &212112192554750816
 SpriteRenderer:
   m_ObjectHideFlags: 1
