@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 	private float batteryLife = 0f; // PUT IN GAME MANAGER
 //	private int carriedBattery = 0; // PUT IN GAME MANAGER
 	private Vector3 flashlightSize;
-	public GameObject start, start2;
+	GameObject start;
 	#endregion
 	// Use this for initialization
 	void Start () {
@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 		playerHealth = GetComponent <PlayerHealth>();
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");
+		start = GameObject.FindGameObjectWithTag("Start");
 		
 		
 		// damageAttack = 10;

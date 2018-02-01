@@ -12,15 +12,13 @@ public class LevelManager : MonoBehaviour {
 	public Text  toast;
 	[HideInInspector] public string toastText;
 	public static LevelManager instance=null;	
-	[HideInInspector] public bool playerCanMove;
 	public float batteryLife;
 	
 	public int foodCount, rKey, sKey,batteryCount;
 	public GameObject enemy;
 	PlayerMovement player;
-	private int loadingScreenUp;
 	int currentLevel;
-	int numberOfEnemies;
+
 //	Transform [][] enemySpawnPoints = new Transform [6][];
 	public Transform [] enemySpawnPoints = new Transform [3];
 	Transform [,] ladderPoints = new Transform [6,3];
@@ -33,11 +31,12 @@ public class LevelManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		batteryLife = 60f;
+
+		currentLevel = 0; 
 		//Get title up
 	}
 	// Use this for initialization
 	void Start () {
-		spawnEnemy();
 		itemUI = GameObject.Find("ItemsUI").GetComponent<CanvasGroup>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 		// flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
@@ -59,10 +58,6 @@ public class LevelManager : MonoBehaviour {
 	void assignLadderPoints () {
 		//asign level shit;
 	}
-	void spawnEnemy () {
-		// for (int x = 0; x < 3 ; x++)
-//		Instantiate (enemy, enemySpawnPoints[x].position, enemySpawnPoints[x].rotation);
-	}	
 	// Update is called once per frame
 	void Update () {
 
