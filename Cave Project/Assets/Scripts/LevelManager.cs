@@ -48,6 +48,9 @@ public class LevelManager : MonoBehaviour {
 		itemUI.alpha =0;
 
 		itemList[0] = GameObject.Find("rKeyUIText").GetComponent<Text>();
+		if ( itemList[0]!=null) {
+			Debug.Log ("text is not null");
+		}
 		itemList[1] = GameObject.Find("sKeyUIText").GetComponent<Text>();
 		itemList[2] = GameObject.Find("foodUIText").GetComponent<Text>();
 		itemList[3] = GameObject.Find("batteryUIText").GetComponent<Text>();
@@ -57,8 +60,8 @@ public class LevelManager : MonoBehaviour {
 		//asign level shit;
 	}
 	void spawnEnemy () {
-		for (int x = 0; x < 3 ; x++)
-		Instantiate (enemy, enemySpawnPoints[x].position, enemySpawnPoints[x].rotation);
+		// for (int x = 0; x < 3 ; x++)
+//		Instantiate (enemy, enemySpawnPoints[x].position, enemySpawnPoints[x].rotation);
 	}	
 	// Update is called once per frame
 	void Update () {
@@ -99,15 +102,24 @@ public class LevelManager : MonoBehaviour {
 				foodCount--;
 			}
 		}
+
+		if (rKey<0 || sKey<0) {
+			rKey=0;
+			sKey=0;
+		}
 		itemList[0].text = rKey.ToString();
+		//Debug.Log ("R KEY IS " + itemList[0].text );	
 		itemList[1].text = sKey.ToString();
 		itemList[2].text = foodCount.ToString();
 		itemList[3].text = batteryCount.ToString();
+
+		
 	}
 
 	public void addBattery() {
-		toastText = "You acquired battery!";
 		batteryCount++;
+		toastText = "You acquired battery!";
+		
 		setToastText();
 		// Debug.Log ("Batt count " + batteryCount);
 	}
@@ -116,9 +128,10 @@ public class LevelManager : MonoBehaviour {
 		batteryLife +=5f;
 	}
 	public void addFoodCount (){
+		foodCount++;
 		toastText = "You acquired a Food Bar!";
 		setToastText();
-		foodCount++;
+		
 	}
 	public void addHealth () {
 		player.eatFood();
@@ -131,14 +144,17 @@ public class LevelManager : MonoBehaviour {
 	// 	flashlightStatus.text ="BATTERY STATUS: " + batteryLife.ToString("F0")+"s LEFT";
 	// }
 	public void addSpcKey (){
-		toastText = "You acquired a Special Key!";	
-		setToastText();
 		sKey++;
+		toastText = "You acquired a Special Key!";	
+		
+		setToastText();
+		
 	}
 	public void addRegKey (){
+		rKey++;	
 		toastText = "You acquired a Key!";
 		setToastText();
-		rKey++;		
+			
 		Debug.Log ("Key count " + rKey);
 	}
 

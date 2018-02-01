@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4565781321783932}
   - component: {fileID: 61293595584511094}
   - component: {fileID: 95649035835031970}
-  - component: {fileID: 114368465408953568}
+  - component: {fileID: 114659660344617856}
   m_Layer: 8
   m_Name: Door_S_DOWN
   m_TagString: Door_Spc
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4067763398381404}
   - component: {fileID: 61235872940847226}
   - component: {fileID: 95772368585399690}
-  - component: {fileID: 114542735778666210}
+  - component: {fileID: 114084761976535992}
   m_Layer: 8
   m_Name: Door_S_UP
   m_TagString: Door_Reg
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975912423509062}
   - component: {fileID: 61870377096768386}
-  - component: {fileID: 114217718955057552}
+  - component: {fileID: 114273064284814022}
   m_Layer: 8
   m_Name: Doors_S
   m_TagString: Untagged
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1922315328954136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.93, z: 0}
+  m_LocalPosition: {x: 12.8, y: 1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4067763398381404}
@@ -274,32 +274,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114217718955057552
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922315328954136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8dbc90e655f52b41b9e495a34a47512, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  opened: 0
-  CanOpen: 0
---- !u!114 &114368465408953568
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1427771448629898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06604d25c2eb6c40972cbe50cf3f9b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kindOfKey: 
---- !u!114 &114542735778666210
+--- !u!114 &114084761976535992
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -307,10 +282,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1708027692812610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06604d25c2eb6c40972cbe50cf3f9b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 43a999f88ba0cec4783c7fca42cde92c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kindOfKey: 
+  opened: 0
+  canOpen: 0
+--- !u!114 &114273064284814022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922315328954136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcfe6855544ace04a8ebcbfdece395ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 
+  canOpen: 0
+--- !u!114 &114659660344617856
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427771448629898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a999f88ba0cec4783c7fca42cde92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  opened: 0
+  canOpen: 0
 --- !u!212 &212315115305941970
 SpriteRenderer:
   m_ObjectHideFlags: 1
