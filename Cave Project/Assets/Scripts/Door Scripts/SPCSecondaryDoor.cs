@@ -7,6 +7,7 @@ public class SPCSecondaryDoor : MonoBehaviour {
 	// Use this for initialization
 	public bool opened, canOpen;
 	SPCMainDoor mainDoor;
+	int x=1;
 	Animator animator;
 	void Start () {
 		mainDoor= GetComponentInParent<SPCMainDoor>();
@@ -16,19 +17,32 @@ public class SPCSecondaryDoor : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (mainDoor.canOpen&&!opened){
-			setDoorToOpen();
+			OpenDoor();
+			// opened = true;
 		}
 	}
 
 	public void setDoorToOpen () {
-		//animator set to opening state 
-		animator.SetTrigger ("canOpenDoor");
+		
 		//animator set to opened state 
 		animator.SetBool("hasOpened", true);
+		
+	}
+
+		void OpenDoor () {
+		//animator set to opening state 
+		animator.SetTrigger ("canOpenDoor");
 		opened = true;
 		LevelManager.instance.sKey--;
 		//set bool to opened
-		mainDoor.text = " ";
+		mainDoor.text=" ";
+	}
+
+	void ReduceKey () {
+		if (x==1) {
+			LevelManager.instance.rKey--;
+			x++;
+		}
 		
 	}
 }

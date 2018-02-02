@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour {
 	public Color deathColor = new Color (0 , 0, 0 , .5f);
 	public int health = 100;
 	void Start () {
-	//damageImage.color = Color.clear;
+		//damageImage.color = Color.clear;
 	}
 	
 	// Update is called once per frame

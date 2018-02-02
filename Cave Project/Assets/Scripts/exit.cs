@@ -7,12 +7,22 @@ using UnityEngine.SceneManagement;
 
 public class exit : MonoBehaviour {
 
+Transform pMovement;
+PlayerMovement playerMovement;
+public string levelname;
 	// Use this for initialization
-void OnTriggerEnter2D (Collider2D other) {
-	if (other.gameObject.CompareTag ("Player")) {
+	void Start () {
+		playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 		
-		SceneManager.LoadScene("Level1");
- 
+
 	}
-}
+	void OnTriggerEnter2D (Collider2D other) {
+		if (other.gameObject.CompareTag ("Player")) {
+			
+			SceneManager.LoadScene(levelname);
+			LevelManager.instance.currentLevel++;
+			playerMovement.newLevelStart();
+			
+		}
+	}
 }

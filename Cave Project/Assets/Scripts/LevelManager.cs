@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
+	public Vector2[] start = new Vector2 [6];
+	Vector2 startHere;
 	Text [] itemList = new Text [4];
 	CanvasGroup itemUI;
 	public Slider batterySlider;
@@ -17,7 +19,7 @@ public class LevelManager : MonoBehaviour {
 	public int foodCount, rKey, sKey,batteryCount;
 	public GameObject enemy;
 	PlayerMovement player;
-	int currentLevel;
+	public int currentLevel;
 
 //	Transform [][] enemySpawnPoints = new Transform [6][];
 	public Transform [] enemySpawnPoints = new Transform [3];
@@ -32,7 +34,8 @@ public class LevelManager : MonoBehaviour {
 		}
 		batteryLife = 60f;
 
-		currentLevel = 0; 
+		currentLevel = 0;
+
 		//Get title up
 	}
 	// Use this for initialization
@@ -41,40 +44,42 @@ public class LevelManager : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 		// flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
 		toast = GameObject.Find("Toast").GetComponent<Text>();
-		
+		//WAIT TIME FOR DISPLAYING TOAST TEXT
 		waitTime = 3f;
-
+		//PRESS TAB TO HIDE AND SHOW UI
 		itemUI.alpha =0;
-
+//=======================================================================================================================================
+		//GET UI 
 		itemList[0] = GameObject.Find("rKeyUIText").GetComponent<Text>();
-		if ( itemList[0]!=null) {
-			Debug.Log ("text is not null");
-		}
 		itemList[1] = GameObject.Find("sKeyUIText").GetComponent<Text>();
 		itemList[2] = GameObject.Find("foodUIText").GetComponent<Text>();
 		itemList[3] = GameObject.Find("batteryUIText").GetComponent<Text>();
+
+//=======================================================================================================================================
+		//SET START POINTS
+		start[0] = new Vector2 (45,12);
+		start[1] = new Vector2 (20,1);
+	
 	}
 
-	void assignLadderPoints () {
-		//asign level shit;
-	}
-	// Update is called once per frame
 	void Update () {
-
+		//BATTERY STATUS
 		batterySlider.value = batteryLife;
-		// setFlashlightStatusText ();
+		//COUNTDOWN OF TIMER 
 		waitTime = Mathf.MoveTowards(waitTime,0f, Time.deltaTime);
-		// Debug.Log ("wait: " + waitTime);
 		if (waitTime == 0f) {
 			toastText = " ";
 			setToastText();
 		}
+		//PRESS TAB TO HIDE AND SHOW UI
 		if (Input.GetKeyDown (KeyCode.Tab)) {
 			itemUI.alpha =1;
 		}
 		if (Input.GetKeyUp (KeyCode.Tab)) {
 			itemUI.alpha =0;
 		}
+
+		//USE BATTERIES
 		if (Input.GetKeyDown (KeyCode.R)) {
 		
 			if (batteryCount==0) {
@@ -86,6 +91,8 @@ public class LevelManager : MonoBehaviour {
 				batteryCount--;
 			}
 		}
+
+		//USE FOOD BARS
 		if (Input.GetKeyDown (KeyCode.E)) {
 			if (foodCount==0) {
 				toastText = "You don't have food bars";
@@ -102,8 +109,9 @@ public class LevelManager : MonoBehaviour {
 			rKey=0;
 			sKey=0;
 		}
+
+		//UPDATE UI 
 		itemList[0].text = rKey.ToString();
-		//Debug.Log ("R KEY IS " + itemList[0].text );	
 		itemList[1].text = sKey.ToString();
 		itemList[2].text = foodCount.ToString();
 		itemList[3].text = batteryCount.ToString();
@@ -118,15 +126,13 @@ public class LevelManager : MonoBehaviour {
 		setToastText();
 		// Debug.Log ("Batt count " + batteryCount);
 	}
-	public void addBatteryTime () {
-		
+	public void addBatteryTime () {	
 		batteryLife +=5f;
 	}
 	public void addFoodCount (){
 		foodCount++;
 		toastText = "You acquired a Food Bar!";
-		setToastText();
-		
+		setToastText();	
 	}
 	public void addHealth () {
 		player.eatFood();
@@ -152,8 +158,5 @@ public class LevelManager : MonoBehaviour {
 			
 		Debug.Log ("Key count " + rKey);
 	}
-
-	
-
 
 }

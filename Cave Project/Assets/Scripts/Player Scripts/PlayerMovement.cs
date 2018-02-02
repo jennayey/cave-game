@@ -20,10 +20,11 @@ public class PlayerMovement : MonoBehaviour {
 	private float batteryLife = 0f; // PUT IN GAME MANAGER
 //	private int carriedBattery = 0; // PUT IN GAME MANAGER
 	private Vector3 flashlightSize;
-	GameObject start;
+	Vector2 start;
 	#endregion
 	// Use this for initialization
 	void Start () {
+		start = GameObject.FindGameObjectWithTag("Start").gameObject.transform.position;
 		rb2d = GetComponent<Rigidbody2D>();
 		animator = GetComponent <Animator>();
 		//start = GetComponent<GameObject>();
@@ -33,9 +34,9 @@ public class PlayerMovement : MonoBehaviour {
 		playerHealth = GetComponent <PlayerHealth>();
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");
-		start = GameObject.FindGameObjectWithTag("Start");
-		
-		
+		start = GameObject.FindGameObjectWithTag("Start").transform.position;
+		transform.position = start;
+		Debug.Log ("GameObject START Found");
 		// damageAttack = 10;
 
 		if (lightChild!= null) {
@@ -46,15 +47,6 @@ public class PlayerMovement : MonoBehaviour {
 			}
 			lightChild.gameObject.transform.localScale = flashlightSize;
 		}
-		// else 
-		// 	Debug.Log ("Not found");
-		
-		if (start != null){
-			// Debug.Log ("GameObject Found");
-			transform.position = start.gameObject.transform.position;
-		}
-		// else
-		// 	Debug.Log ("GameObject not Found");	
 	}
 	// Update is called once per frame
 	void Update () {
@@ -149,6 +141,17 @@ public class PlayerMovement : MonoBehaviour {
 		else if (LevelManager.instance.foodCount ==0 ) {
 			LevelManager.instance.toastText = "You don't have food anymore";
 			LevelManager.instance.setToastText();
+		}
+	}
+
+	public void newLevelStart () {
+		switch (LevelManager.instance.currentLevel) {
+			case 0: 
+				transform.position = LevelManager.instance.start[0];
+				break;
+			case 1:
+				transform.position = LevelManager.instance.start[1];
+				break;
 		}
 	}
 	

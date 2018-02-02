@@ -7,25 +7,31 @@ public class MainDoor : MonoBehaviour {
 	// Use this for initialization
 	SecondaryDoor secondaryDoor;
 	public string text;
-	public bool canOpen;	
+	public bool canOpen;
+
+	
 	void Start () {
 		secondaryDoor = GetComponentInChildren<SecondaryDoor>();
 		canOpen= false;
 		text="You don't have keys to open this door";
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+	
 	}
 
 	void OnTriggerStay2D (Collider2D other) {
 		Debug.Log ("on door");
 		if (other.gameObject.CompareTag ("Player")) {
-			if (Input.GetKey (KeyCode.V)) {
+			if (Input.GetKeyDown (KeyCode.V)) {
+				Debug.Log ("PRESSING V");
 				if (LevelManager.instance.rKey>0 ){
-					if (!secondaryDoor.opened)
+					if (!secondaryDoor.opened) {
 						canOpen=true;
+					}
+						
 						// secondaryDoor.setDoorToOpen();
 
 				}
