@@ -6,10 +6,15 @@ public class SPCMainDoor : MonoBehaviour {
 
 	// Use this for initialization
 	SPCSecondaryDoor secondaryDoor;
-public	string text;
+	public	string text;
 	public bool canOpen;	
 	void Start () {
 		secondaryDoor = GetComponentInChildren<SPCSecondaryDoor>();
+		// if (secondaryDoor!=null) {
+		// 	Debug.Log ("SPC DOor is not null");
+		// }
+		// else 
+		// 	Debug.Log ("SPC Door is null");	
 		canOpen= false;
 		text = "You don't have keys to open this door";
 	}
@@ -19,19 +24,24 @@ public	string text;
 		
 	}
 
-	void OnTriggerEnter2D (Collider2D other) {
+	void OnTriggerStay2D (Collider2D other) {
 		Debug.Log ("on door");
 		if (other.gameObject.CompareTag ("Player")) {
-			if (Input.GetKey (KeyCode.V)) {
+			if (Input.GetKeyDown (KeyCode.V)) {
+				
 				if (LevelManager.instance.sKey>0 ){
-					if (!secondaryDoor.opened)
+					Debug.Log ("PRESSING V");
+					if (!secondaryDoor.opened) {
 						canOpen=true;
+					}
+						
 						// secondaryDoor.setDoorToOpen();
 
 				}
 				else {
 					Debug.Log ("No key");
 					//toast text to
+					canOpen= false;
 					LevelManager.instance.toastText = text ;
 					LevelManager.instance.setToastText();
 

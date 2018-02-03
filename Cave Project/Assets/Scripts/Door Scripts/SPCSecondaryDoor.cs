@@ -40,7 +40,7 @@ public class SPCSecondaryDoor : MonoBehaviour {
 
 	void ReduceKey () {
 		if (x==1) {
-			LevelManager.instance.rKey--;
+			LevelManager.instance.sKey--;
 			x++;
 		}
 		

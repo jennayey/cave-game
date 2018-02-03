@@ -58,7 +58,7 @@ public class LevelManager : MonoBehaviour {
 //=======================================================================================================================================
 		//SET START POINTS
 		start[0] = new Vector2 (45,12);
-		start[1] = new Vector2 (20,1);
+		start[1] = new Vector2 (1,1);
 	
 	}
 
