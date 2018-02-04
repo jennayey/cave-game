@@ -152,6 +152,19 @@ public class PlayerMovement : MonoBehaviour {
 			case 1:
 				transform.position = LevelManager.instance.start[1];
 				break;
+			case 2:
+				transform.position = LevelManager.instance.start[2];
+				break;
+			case 3:
+				transform.position = LevelManager.instance.start[3];
+				break;
+			case 4:
+				transform.position = LevelManager.instance.start[4];
+				break;
+			case 5:
+				transform.position = LevelManager.instance.start[5];
+				break;
+
 		}
 	}
 	
