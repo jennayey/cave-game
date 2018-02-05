@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		batteryLife = 60f;
-
+		
 		currentLevel = 0;
 
 		//Get title up
@@ -59,10 +59,10 @@ public class LevelManager : MonoBehaviour {
 		//SET START POINTS
 		start[0] = new Vector2 (45,12);
 		start[1] = new Vector2 (70,-7);
-		start[2] = new Vector2 (1,1);
-		start[3] = new Vector2 (1,1);
-		start[4] = new Vector2 (1,1);
-		start[5] = new Vector2 (1,1);
+		start[2] = new Vector2 (28,-28);
+		start[3] = new Vector2 (90,-30);
+		start[4] = new Vector2 (46,20);
+		start[5] = new Vector2 (1,28);
 	
 	}
 

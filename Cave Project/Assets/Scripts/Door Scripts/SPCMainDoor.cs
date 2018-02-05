@@ -27,7 +27,7 @@ public class SPCMainDoor : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D other) {
 		Debug.Log ("on door");
 		if (other.gameObject.CompareTag ("Player")) {
-			if (Input.GetKeyDown (KeyCode.V)) {
+			if (Input.GetKeyUp (KeyCode.V)) {
 				
 				if (LevelManager.instance.sKey>0 ){
 					Debug.Log ("PRESSING V");

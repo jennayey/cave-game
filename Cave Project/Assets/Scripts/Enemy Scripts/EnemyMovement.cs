@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
 
 	// Use this for initialization
-	
+
 	//reference for player health
 	//reference for enemy health
 	public float speed = 3f;
-	public Transform player;
+	// public Transform player;
+	GameObject player;
 	float lasPOs;
 	Rigidbody2D rb;
 	int health;
@@ -24,11 +25,12 @@ public class EnemyMovement : MonoBehaviour {
 		enemyAttack = GetComponentInChildren<EnemyAttack>();
 		enemyHealth = GetComponent<EnemyHealth>();
 		health = enemyHealth.health;
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		distance = Vector2.Distance(transform.position, player.position);
+		distance = Vector2.Distance(transform.position, player.transform.position);
 		
 		// if player is alive 
 		// check distance if faraway 
@@ -51,7 +53,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (enterTrigger){
-			rb.position = Vector2.MoveTowards (transform.position, player.position, speed * Time.deltaTime);
+			rb.position = Vector2.MoveTowards (transform.position, player.transform.position, speed * Time.deltaTime);
 		}
 	}
 
@@ -62,6 +64,7 @@ public class EnemyMovement : MonoBehaviour {
 	}
 	void Attack () {
 		enemyAttack.AttackPlayer ();
+	
 	}
 
 

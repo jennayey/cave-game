@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour {
 	void Start () {
 		spawnBattery();
 		spawnFood();
-		if (LevelManager.instance.currentLevel>2) {
+		if (LevelManager.instance.currentLevel>1) {
 			spawnEnemy();
 		}
 	}

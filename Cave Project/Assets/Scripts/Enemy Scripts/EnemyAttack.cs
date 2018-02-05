@@ -16,9 +16,21 @@ public class EnemyAttack : MonoBehaviour {
 	void Awake () {
 		enemyHealth = GetComponentInParent<EnemyHealth>();
 		player = GameObject.FindGameObjectWithTag("Player");
+
+		if (player == null) {
+			Debug.Log ("PLAYER IS NULL");
+		}
+
+		else {
+			Debug.Log ("PLAYER IS NOT NULL");
+		}
 		playerHealth = player.GetComponent<PlayerHealth>();
 		animator = GetComponentInParent<Animator>();
 	
+	}
+
+	void Start () {
+		
 	}
 	void Update () {
 		if (playerNear&&enemyHealth.health!=0 && playerHealth.health!=0) {

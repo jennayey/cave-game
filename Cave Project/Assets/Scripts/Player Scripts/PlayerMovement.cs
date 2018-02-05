@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour {
 		batteryLife = LevelManager.instance.batteryLife;
 	
 		
-		if (Input.GetKey(KeyCode.Space)) {
+		if (Input.GetKeyUp(KeyCode.Space)) {
 			animator.SetTrigger ("playerAttack");
 			// spRenderer.color = Color.red;
 			//spRenderer.color = Color.white;
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour {
 		
 	}
 	private void addLightPower () {
-		lightChild.gameObject.transform.localScale = new Vector3(5,5,0);
+		lightChild.gameObject.transform.localScale = new Vector3(7,7,0);
 	}
 	private void reducePower () {
 				lightChild.gameObject.transform.localScale = new Vector3(2,2,0);
