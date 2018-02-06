@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	#region Variables
 	// public Text flashlightStatus, toast;
 	
-	SpriteRenderer spRenderer;
+
 	PlayerHealth playerHealth;
 	public float speed;
 	// private int damageAttack;
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour {
 		//start = GetComponent<GameObject>();
 		//start2 = GetComponent<GameObject>();
 		//initialize flashlight size
-		spRenderer= GetComponent<SpriteRenderer>();
+		// spRenderer= GetComponent<SpriteRenderer>();
 		playerHealth = GetComponent <PlayerHealth>();
 		flashlightSize = new Vector3 (2,2,0);
 		lightChild= transform.Find ("Flashlight");

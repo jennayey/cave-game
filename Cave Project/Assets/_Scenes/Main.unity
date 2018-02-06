@@ -6638,7 +6638,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 299821391}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 459, y: 205, z: 0}
+  m_LocalPosition: {x: 459, y: 216, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 479569377}
@@ -7198,7 +7198,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532757374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -459, y: 205, z: 0}
+  m_LocalPosition: {x: -459, y: 216, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 420691100}
@@ -7961,7 +7961,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 577103011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -459, y: 153.49, z: 0}
+  m_LocalPosition: {x: -459, y: 164.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1348846700}
@@ -8045,7 +8045,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 703481733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -165, z: 0}
+  m_LocalPosition: {x: 0, y: -176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 299821395}
@@ -8600,7 +8600,7 @@ MonoBehaviour:
   m_ScreenX: 0.5
   m_ScreenY: 0.49999994
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0.2340783
+  m_DeadZoneWidth: 0.23189947
   m_DeadZoneHeight: 0.1271778
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
@@ -9248,7 +9248,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1256654710}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -279, y: 160, z: 0}
+  m_LocalPosition: {x: -279, y: 171, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 299821395}
@@ -9778,7 +9778,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648525064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -459, y: 205, z: 0}
+  m_LocalPosition: {x: -459, y: 216, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 489088412}
@@ -10141,6 +10141,21 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 855562054}
+    - target: {fileID: 1583302715931318, guid: 0cf5b9cf9faf5654a8012ceafc560fe3, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212112192554750816, guid: 0cf5b9cf9faf5654a8012ceafc560fe3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212832062110395142, guid: 0cf5b9cf9faf5654a8012ceafc560fe3,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49751d6ba0665374a92ac812e1ff10f9,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0cf5b9cf9faf5654a8012ceafc560fe3, type: 2}
   m_IsPrefabParent: 0

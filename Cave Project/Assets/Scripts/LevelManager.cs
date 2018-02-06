@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour {
 
 //	Transform [][] enemySpawnPoints = new Transform [6][];
 	public Transform [] enemySpawnPoints = new Transform [3];
-	Transform [,] ladderPoints = new Transform [6,3];
+
 
 	void Awake () {
 		if (instance ==null) {
@@ -58,11 +58,18 @@ public class LevelManager : MonoBehaviour {
 //=======================================================================================================================================
 		//SET START POINTS
 		start[0] = new Vector2 (45,12);
-		start[1] = new Vector2 (70,-7);
-		start[2] = new Vector2 (28,-28);
-		start[3] = new Vector2 (90,-30);
-		start[4] = new Vector2 (46,20);
-		start[5] = new Vector2 (1,28);
+		start[1] = new Vector2 (0,0);
+		start[2] = new Vector2 (0,0);
+		start[3] = new Vector2 (0,0);
+		start[4] = new Vector2 (0,0);
+		start[5] = new Vector2 (0,0);
+
+		// start[0] = new Vector2 (45,12);
+		// start[1] = new Vector2 (70,-7);
+		// start[2] = new Vector2 (28,-28);
+		// start[3] = new Vector2 (90,-30);
+		// start[4] = new Vector2 (46,20);
+		// start[5] = new Vector2 (1,28);
 	
 	}
 
