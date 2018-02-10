@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
+	public AudioClip pickUpUSE;
 	public Vector2[] start = new Vector2 [6];
 	Vector2 startHere;
 	Text [] itemList = new Text [4];
@@ -15,31 +16,62 @@ public class LevelManager : MonoBehaviour {
 	[HideInInspector] public string toastText;
 	public static LevelManager instance=null;	
 	public float batteryLife;
+	public int playerHealth;
 	
 	public int foodCount, rKey, sKey,batteryCount;
-	public GameObject enemy;
 	PlayerMovement player;
 	public int currentLevel;
+	public int acqKeys, acqSkeys, acqFood,acqBatteries;
 
 //	Transform [][] enemySpawnPoints = new Transform [6][];
-	public Transform [] enemySpawnPoints = new Transform [3];
 
+	public void Save() {
+		SaveLoadManager.SavePlayer(this);
+	}
+	public void Load() {
+		int[] loadedStats = SaveLoadManager.LoadPlayer();
+
+		currentLevel = loadedStats [0];
+		rKey = 0;
+		sKey =  0;
+		foodCount =  loadedStats [3];
+		batteryCount = loadedStats [4];
+		playerHealth = loadedStats [5];
+		batteryLife = (float) loadedStats [6];
+	}
 
 	void Awake () {
+		
 		if (instance ==null) {
 			instance =this;
 		}
 		else if (instance!=this) {
 			Destroy(gameObject);
 		}
-		batteryLife = 60f;
+		if (NewGame.newSave!=true) {
+			toastText = "Checkpoint added";
+			setToastText();
+		}
 		
-		currentLevel = 0;
+		if (NewGame.newSave==true) {
+				currentLevel = 0;
+			playerHealth=100;
+			rKey = 0;
+			sKey = 0;
+			foodCount =  0;
+			batteryCount = 0;
+			playerHealth =100;
+			batteryLife =60f;
+			Save();
+			NewGame.loadSave();
+		}
 
 		//Get title up
 	}
 	// Use this for initialization
 	void Start () {
+		Load ();
+		
 		itemUI = GameObject.Find("ItemsUI").GetComponent<CanvasGroup>();
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
 		// flashlightStatus = GameObject.Find("Flashlight Text").GetComponent<Text>();
@@ -74,6 +106,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void Update () {
+
 		//BATTERY STATUS
 		batterySlider.value = batteryLife;
 		//COUNTDOWN OF TIMER 
@@ -133,14 +166,17 @@ public class LevelManager : MonoBehaviour {
 	public void addBattery() {
 		batteryCount++;
 		toastText = "You acquired battery!";
+		acqBatteries++;
 		
 		setToastText();
 		// Debug.Log ("Batt count " + batteryCount);
 	}
 	public void addBatteryTime () {	
+		SoundManager.instance.PlaySingle(pickUpUSE);
 		batteryLife +=5f;
 	}
 	public void addFoodCount (){
+		acqFood++;
 		foodCount++;
 		toastText = "You acquired a Food Bar!";
 		setToastText();	
@@ -152,10 +188,11 @@ public class LevelManager : MonoBehaviour {
 		toast.text = toastText;
 		waitTime = 3f;
 	}
-	// void setFlashlightStatusText (){
+	// void set/StatusText (){
 	// 	flashlightStatus.text ="BATTERY STATUS: " + batteryLife.ToString("F0")+"s LEFT";
 	// }
 	public void addSpcKey (){
+		acqSkeys++;
 		sKey++;
 		toastText = "You acquired a Special Key!";	
 		
@@ -163,6 +200,7 @@ public class LevelManager : MonoBehaviour {
 		
 	}
 	public void addRegKey (){
+		acqKeys++;
 		rKey++;	
 		toastText = "You acquired a Key!";
 		setToastText();

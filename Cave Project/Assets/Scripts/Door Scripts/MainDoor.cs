@@ -25,7 +25,7 @@ public class MainDoor : MonoBehaviour {
 	void OnTriggerStay2D (Collider2D other) {
 		Debug.Log ("on door");
 		if (other.gameObject.CompareTag ("Player")) {
-			if (Input.GetKeyUp (KeyCode.V)) {
+			if (Input.GetKeyDown (KeyCode.V)) {
 				// Debug.Log ("PRESSING V");
 				if (LevelManager.instance.rKey>0 ){
 					if (!secondaryDoor.opened) {

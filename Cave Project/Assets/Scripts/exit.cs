@@ -19,9 +19,12 @@ public string levelname;
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
 			
-			SceneManager.LoadScene(levelname);
 			LevelManager.instance.currentLevel++;
+			LevelManager.instance.Save();
 			playerMovement.newLevelStart();
+			SceneManager.LoadScene(levelname);
+			
+			
 			
 		}
 	}

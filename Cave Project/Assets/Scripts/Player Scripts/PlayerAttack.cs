@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
 	// Use this for initialization
+	public AudioClip attackClip;
 	GameObject weapon;
 	public int damage = 1;
 
@@ -20,6 +21,7 @@ public class PlayerAttack : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 				Debug.Log ("Attacking enemy");
 				weapon.SetActive(true);
+				SoundManager.instance.PlaySingle(attackClip);
 			}
 
 			else 

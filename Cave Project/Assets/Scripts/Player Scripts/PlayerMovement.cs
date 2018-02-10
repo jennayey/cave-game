@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
 	#region Variables
 	// public Text flashlightStatus, toast;
 	
+	public AudioClip pickUpSFX;
+	public AudioClip pickUpUSE;
 
 	PlayerHealth playerHealth;
 	public float speed;
@@ -56,43 +58,46 @@ public class PlayerMovement : MonoBehaviour {
 		batteryLife = LevelManager.instance.batteryLife;
 	
 		
-		if (Input.GetKeyUp(KeyCode.Space)) {
-			animator.SetTrigger ("playerAttack");
-			// spRenderer.color = Color.red;
-			//spRenderer.color = Color.white;
-		}
-		//move left
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			tryMove += Vector2Int.left;
-			transform.localEulerAngles = new Vector2 (transform.rotation.x, rotateFace);
-		}
-		//move right
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			tryMove += Vector2Int.right;
-			transform.localEulerAngles = new Vector2 (transform.rotation.x, 0); //zero faces back to original
-		}
-		//move up
-		if (Input.GetKey (KeyCode.UpArrow))
-			tryMove += Vector2Int.up;
-		//move down
-		if (Input.GetKey (KeyCode.DownArrow))
-			tryMove += Vector2Int.down;	
-		//Lights turn on
-		if (Input.GetKey(KeyCode.LeftShift)){
-			Debug.Log ("Shift Down");
-			if (batteryLife<=0f){
-				//Debug.Log ("You don't have batteries");
-				reducePower();
+		if (!PauseMenu.gameIsPaused) {
+			if (Input.GetKeyUp(KeyCode.Space)) {
+				animator.SetTrigger ("playerAttack");
+				// spRenderer.color = Color.red;
+				//spRenderer.color = Color.white;
 			}
-			else if (batteryLife >0) {
-				addLightPower();
-				
-				LevelManager.instance.batteryLife = Mathf.MoveTowards (batteryLife, 0f ,Time.deltaTime);
-			}	
-		}
-		//light turn off	
-		if (Input.GetKeyUp(KeyCode.LeftShift)) {
-			reducePower();	
+			//move left
+			if (Input.GetKey (KeyCode.LeftArrow)) {
+				tryMove += Vector2Int.left;
+				transform.localEulerAngles = new Vector2 (transform.rotation.x, rotateFace);
+			}
+			//move right
+			if (Input.GetKey (KeyCode.RightArrow)) {
+				tryMove += Vector2Int.right;
+				transform.localEulerAngles = new Vector2 (transform.rotation.x, 0); //zero faces back to original
+			}
+			//move up
+			if (Input.GetKey (KeyCode.UpArrow))
+				tryMove += Vector2Int.up;
+			//move down
+			if (Input.GetKey (KeyCode.DownArrow))
+				tryMove += Vector2Int.down;	
+			//Lights turn on
+			if (Input.GetKey(KeyCode.LeftShift)){
+				Debug.Log ("Shift Down");
+				if (batteryLife<=0f){
+					LevelManager.instance.toastText = "You don't have batteries";
+					LevelManager.instance.setToastText();
+					reducePower();
+				}
+				else if (batteryLife >0) {
+					addLightPower();
+					
+					LevelManager.instance.batteryLife = Mathf.MoveTowards (batteryLife, 0f ,Time.deltaTime);
+				}	
+			}
+			//light turn off	
+			if (Input.GetKeyUp(KeyCode.LeftShift)) {
+				reducePower();	
+			}
 		}
 	}
 	
@@ -112,18 +117,22 @@ public class PlayerMovement : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Battery")) {
 			other.gameObject.SetActive (false);
 			LevelManager.instance.addBattery();
+			SoundManager.instance.PlaySingle(pickUpSFX);
 		}
 		else if (other.gameObject.CompareTag ("Food")) {
 			other.gameObject.SetActive (false);
 			LevelManager.instance.addFoodCount();
+			SoundManager.instance.PlaySingle(pickUpSFX);
 		}
-		else if (other.gameObject.CompareTag ("Key_Reg")) {
+		else if (other.gameObject.CompareTag ("Key_Reg")) {	
 			other.gameObject.SetActive (false);
 			LevelManager.instance.addRegKey();
+			SoundManager.instance.PlaySingle(pickUpSFX);
 		}
 		else if (other.gameObject.CompareTag ("Key_Spc")) {
 			other.gameObject.SetActive (false);
 			LevelManager.instance.addSpcKey();
+			SoundManager.instance.PlaySingle(pickUpSFX);
 		}
 		//collision with exit object
 		
@@ -137,6 +146,7 @@ public class PlayerMovement : MonoBehaviour {
 	public void eatFood (){
 		if (LevelManager.instance.foodCount >0) {
 			playerHealth.health+=foodValue;
+			SoundManager.instance.PlaySingle(pickUpUSE);
 		}
 		else if (LevelManager.instance.foodCount ==0 ) {
 			LevelManager.instance.toastText = "You don't have food anymore";

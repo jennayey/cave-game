@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour {
 
 	// Use this for initialization
+	public AudioClip hurtClip;
 	public Image damageImage;
 	public Slider healthSlider;
 	public Color damageColor  = new Color (1f, 0 , 0 , .5f);
@@ -13,21 +14,23 @@ public class PlayerHealth : MonoBehaviour {
 	public int health = 100;
 	void Start () {
 		//damageImage.color = Color.clear;
-	}
+		
 	
+	}
 	// Update is called once per frame
 	void Update () {
-		healthSlider.value = health;
+		healthSlider.value = LevelManager.instance.playerHealth;
 		
 	}	
 
 	public void takeDamage (int damage) {
-		if (health>=1) {
+		if (LevelManager.instance.playerHealth>=1) {
 			damageImage.color = damageColor;
-			health-=damage;
+			LevelManager.instance.playerHealth-=damage;
+			SoundManager.instance.PlaySingle(hurtClip);
 		}
 
-		else if (health==0) {
+		else if (LevelManager.instance.playerHealth==0) {
 			damageImage.color = deathColor;
 		}
 		damageImage.color = Color.Lerp (damageImage.color, Color.clear, 5f*Time.deltaTime);

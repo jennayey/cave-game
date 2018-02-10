@@ -33,7 +33,7 @@ public class EnemyAttack : MonoBehaviour {
 		
 	}
 	void Update () {
-		if (playerNear&&enemyHealth.health!=0 && playerHealth.health!=0) {
+		if (playerNear&&enemyHealth.health!=0 && LevelManager.instance.playerHealth!=0) {
 			//attack script here
 				//attack here
 				animator.SetTrigger ("playerNearBro"); 
