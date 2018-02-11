@@ -145,7 +145,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	public void eatFood (){
 		if (LevelManager.instance.foodCount >0) {
-			playerHealth.health+=foodValue;
+			LevelManager.instance.playerHealth+=foodValue;
 			SoundManager.instance.PlaySingle(pickUpUSE);
 		}
 		else if (LevelManager.instance.foodCount ==0 ) {

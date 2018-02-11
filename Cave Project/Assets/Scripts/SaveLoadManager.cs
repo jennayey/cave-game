@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+
 
 public static class SaveLoadManager {
 	
@@ -16,24 +17,29 @@ public static class SaveLoadManager {
 		saver.Serialize(stream, save);
 		stream.Close();
 	}
-
-	public static int[] LoadPlayer () {
 	
+	public static int[] LoadPlayer () {
+		
 		if (File.Exists(Application.persistentDataPath + "/gamesave.sv")) {
 			
 			BinaryFormatter saver = new BinaryFormatter();
 			FileStream stream = new FileStream(Application.persistentDataPath + "/gamesave.sv", FileMode.Open);
 			GameSave save = saver.Deserialize(stream) as GameSave;
 			stream.Close();
-
+			
 			return save.stats;
 		
 		}
 		else {
+			
+			
 			Debug.LogError ("File does not exist");
 			return new int[7];
 		}
 	}
+
+	
+
 
 }
 

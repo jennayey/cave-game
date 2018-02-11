@@ -182,6 +182,7 @@ public class LevelManager : MonoBehaviour {
 		setToastText();	
 	}
 	public void addHealth () {
+	
 		player.eatFood();
 	}
 	public void setToastText (){

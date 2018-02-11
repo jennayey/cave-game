@@ -107,6 +107,7 @@
      <Compile Include="Assets\ElevatorTrig.cs" />
      <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\DisableButton.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Door Scripts\MainDoor.cs" />
      <Compile Include="Assets\Scripts\Door Scripts\SecondaryDoor.cs" />

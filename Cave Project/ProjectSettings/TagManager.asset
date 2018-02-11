@@ -14,6 +14,7 @@ TagManager:
   - Door_Reg
   - Door_Spc
   - Start
+  - Continue
   layers:
   - Default
   - TransparentFX
