@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void Awake () {
+		Debug.Log ("CURRENT LEVEL IS " + currentLevel);
 		
 		if (instance ==null) {
 			instance =this;
@@ -61,7 +62,7 @@ public class LevelManager : MonoBehaviour {
 			foodCount =  0;
 			batteryCount = 0;
 			playerHealth =100;
-			batteryLife =60f;
+			batteryLife =80f;
 			Save();
 			NewGame.loadSave();
 		}
@@ -89,19 +90,19 @@ public class LevelManager : MonoBehaviour {
 
 //=======================================================================================================================================
 		//SET START POINTS
-		start[0] = new Vector2 (45,12);
-		start[1] = new Vector2 (0,0);
-		start[2] = new Vector2 (0,0);
-		start[3] = new Vector2 (0,0);
-		start[4] = new Vector2 (0,0);
-		start[5] = new Vector2 (0,0);
-
 		// start[0] = new Vector2 (45,12);
-		// start[1] = new Vector2 (70,-7);
-		// start[2] = new Vector2 (28,-28);
-		// start[3] = new Vector2 (90,-30);
-		// start[4] = new Vector2 (46,20);
-		// start[5] = new Vector2 (1,28);
+		// start[1] = new Vector2 (0,0);
+		// start[2] = new Vector2 (0,0);
+		// start[3] = new Vector2 (0,0);
+		// start[4] = new Vector2 (0,0);
+		// start[5] = new Vector2 (0,0);
+
+		start[0] = new Vector2 (45,12);
+		start[1] = new Vector2 (70,-7);
+		start[2] = new Vector2 (28,-28);
+		start[3] = new Vector2 (90,-30);
+		start[4] = new Vector2 (46,20);
+		start[5] = new Vector2 (1,28);
 	
 	}
 
@@ -124,7 +125,7 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		//USE BATTERIES
-		if (Input.GetKeyDown (KeyCode.R)) {
+		if (Input.GetKeyDown (KeyCode.W)) {
 		
 			if (batteryCount==0) {
 				toastText = "You don't have batteries";
@@ -137,7 +138,7 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		//USE FOOD BARS
-		if (Input.GetKeyDown (KeyCode.E)) {
+		if (Input.GetKeyDown (KeyCode.Q)) {
 			if (foodCount==0) {
 				toastText = "You don't have food bars";
 				setToastText();
@@ -173,7 +174,7 @@ public class LevelManager : MonoBehaviour {
 	}
 	public void addBatteryTime () {	
 		SoundManager.instance.PlaySingle(pickUpUSE);
-		batteryLife +=5f;
+		batteryLife +=15f;
 	}
 	public void addFoodCount (){
 		acqFood++;

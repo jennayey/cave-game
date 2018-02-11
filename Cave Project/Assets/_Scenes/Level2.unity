@@ -35252,6 +35252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f67eb4fe9c8664d88b015fc15357d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1770726358}
+  openingScreen: {fileID: 1770726357}
   levelname: Level3
 --- !u!61 &705901401
 BoxCollider2D:
@@ -41436,7 +41438,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1504139955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -2.9, z: -0.109375}
+  m_LocalPosition: {x: -0.7, y: -2.4, z: -0.109375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41546,12 +41548,12 @@ Prefab:
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 496.5
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
@@ -41674,12 +41676,12 @@ Prefab:
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 496.5
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
@@ -41764,6 +41766,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1770726357 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1284240139065740, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1770726356}
+--- !u!1 &1770726358 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1690860770017490, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1770726356}
 --- !u!1 &1775092920
 GameObject:
   m_ObjectHideFlags: 0
@@ -41855,21 +41867,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: foodSpawnPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: enemySpawnPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: batterySpawnPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4272049586822926, guid: ce69cae5afb4e1d4286a256080645111, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.58748
@@ -41904,31 +41901,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: foodSpawnPoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 1707253535}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: foodSpawnPoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 1775092921}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: foodSpawnPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 423000846}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: foodSpawnPoints.Array.data[3]
-      value: 
-      objectReference: {fileID: 427870498}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: foodSpawnPoints.Array.data[4]
-      value: 
-      objectReference: {fileID: 427870498}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
       propertyPath: enemySpawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1152812981}
@@ -41954,19 +41926,44 @@ Prefab:
       objectReference: {fileID: 648838465}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
+      propertyPath: foodSpawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1707253535}
+    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
+        type: 2}
+      propertyPath: foodSpawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1775092921}
+    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
+        type: 2}
+      propertyPath: foodSpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 423000846}
+    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
+        type: 2}
+      propertyPath: foodSpawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 427870498}
+    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
+        type: 2}
+      propertyPath: foodSpawnPoints.Array.data[4]
+      value: 
+      objectReference: {fileID: 427870498}
+    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
+        type: 2}
       propertyPath: batterySpawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1885675758}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: batterySpawnPoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 25008093}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
       propertyPath: batterySpawnPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1836043796}
+    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
+        type: 2}
+      propertyPath: batterySpawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 25008093}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
       propertyPath: batterySpawnPoints.Array.data[3]

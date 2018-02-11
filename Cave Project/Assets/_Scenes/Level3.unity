@@ -202,18 +202,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 1422482001250724, guid: 5fc1f9c3125bb2d47b3147c5dbbdb9fe, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fc1f9c3125bb2d47b3147c5dbbdb9fe, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &29647613 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1422482001250724, guid: 5fc1f9c3125bb2d47b3147c5dbbdb9fe,
-    type: 2}
-  m_PrefabInternal: {fileID: 29647612}
 --- !u!1 &43586417
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,21 +783,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: foodSpawnPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: enemySpawnPoints.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: batterySpawnPoints.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4272049586822926, guid: ce69cae5afb4e1d4286a256080645111, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.58748
@@ -841,29 +817,29 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: batterySpawnPoints.Array.data[0]
+      propertyPath: enemySpawnPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1210758516}
+      objectReference: {fileID: 1618153666}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: batterySpawnPoints.Array.data[1]
+      propertyPath: enemySpawnPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1897756493}
+      objectReference: {fileID: 708549741}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: batterySpawnPoints.Array.data[2]
+      propertyPath: enemySpawnPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 160471976}
+      objectReference: {fileID: 704716806}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: batterySpawnPoints.Array.data[3]
+      propertyPath: enemySpawnPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 2134814929}
+      objectReference: {fileID: 1488752125}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: batterySpawnPoints.Array.data[4]
+      propertyPath: enemySpawnPoints.Array.data[4]
       value: 
-      objectReference: {fileID: 1545384543}
+      objectReference: {fileID: 43586418}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
       propertyPath: foodSpawnPoints.Array.data[0]
@@ -891,44 +867,29 @@ Prefab:
       objectReference: {fileID: 1108878487}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: enemySpawnPoints.Array.data[0]
+      propertyPath: batterySpawnPoints.Array.data[0]
       value: 
-      objectReference: {fileID: 1618153666}
+      objectReference: {fileID: 1210758516}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: enemySpawnPoints.Array.data[1]
+      propertyPath: batterySpawnPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 708549741}
+      objectReference: {fileID: 1897756493}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: enemySpawnPoints.Array.data[2]
+      propertyPath: batterySpawnPoints.Array.data[2]
       value: 
-      objectReference: {fileID: 704716806}
+      objectReference: {fileID: 160471976}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: enemySpawnPoints.Array.data[3]
+      propertyPath: batterySpawnPoints.Array.data[3]
       value: 
-      objectReference: {fileID: 1488752125}
+      objectReference: {fileID: 2134814929}
     - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
         type: 2}
-      propertyPath: enemySpawnPoints.Array.data[4]
+      propertyPath: batterySpawnPoints.Array.data[4]
       value: 
-      objectReference: {fileID: 43586418}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: enemySpawnPoints.Array.data[5]
-      value: 
-      objectReference: {fileID: 438522667}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: enemySpawnPoints.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114913483726367980, guid: ce69cae5afb4e1d4286a256080645111,
-        type: 2}
-      propertyPath: enemy
-      value: 
-      objectReference: {fileID: 29647613}
+      objectReference: {fileID: 1545384543}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce69cae5afb4e1d4286a256080645111, type: 2}
   m_IsPrefabParent: 0
@@ -19881,12 +19842,12 @@ Prefab:
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 496.5
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
@@ -20359,12 +20320,12 @@ Prefab:
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 496.5
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
@@ -20467,6 +20428,16 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1689156944}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1689156948 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1284240139065740, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1689156944}
+--- !u!1 &1689156949 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1690860770017490, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1689156944}
 --- !u!1 &1690181966
 GameObject:
   m_ObjectHideFlags: 0
@@ -33873,6 +33844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f67eb4fe9c8664d88b015fc15357d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1689156949}
+  openingScreen: {fileID: 1689156948}
   levelname: Level4
 --- !u!61 &1957528049
 BoxCollider2D:
@@ -33972,7 +33945,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2087163457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: -1.7, z: 0}
+  m_LocalPosition: {x: -1.2, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

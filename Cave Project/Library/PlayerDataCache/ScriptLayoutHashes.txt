@@ -1,4 +1,5 @@
 WindowsStandalone
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Ending
 9b9c71cf06a525199c2eb4d3be433bc2 Assembly-CSharp.dll:Cinemachine.CinemachineStateDrivenCamera
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -116,7 +117,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 acbc5cb550fd73551fc3f7462a1c830c Assembly-CSharp.dll:Cinemachine.NoiseSettings
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-8e5a9a16d5bb6d1905391619e93f025e Assembly-CSharp.dll:.exit
+acf122762987ce930370133693ebf715 Assembly-CSharp.dll:.exit
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -140,6 +141,7 @@ c3b726e1ef77ecefcf78c4586a6bf32e Assembly-CSharp.dll:Cinemachine.CinemachineTrac
 d288d6f67bb533134214dec0f3e6237a Assembly-CSharp.dll:.ElevatorTrig
 166f2fb08a5bd8e5be94b11ac3fce237 Assembly-CSharp.dll:Cinemachine.CinemachineTargetGroup
 3e20fa5f6c295b25ca3f5df1283ff5ce Assembly-CSharp.dll:.SPCSecondaryDoor
+1b967889184e6217a46f510fcc1fbde4 Assembly-CSharp.dll:.DisableButton
 01871d49a9abb3105a831dff099ec768 Assembly-CSharp.dll:Cinemachine.CinemachineTransposer
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -193,4 +195,3 @@ ef47b5b296e56702c76218de521ccc37 Assembly-CSharp.dll:Cinemachine.CinemachineBrai
 9dd74a41363b134db6b934985dfd2f92 Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 1f5e5d32a397a14ea2238e622327a549 Assembly-CSharp.dll:.PauseMenu
 3e20fa5f6c295b25ca3f5df1283ff5ce Assembly-CSharp.dll:.SecondaryDoor
-1b967889184e6217a46f510fcc1fbde4 Assembly-CSharp.dll:.DisableButton

@@ -233,6 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f67eb4fe9c8664d88b015fc15357d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadingScreen: {fileID: 1900497101}
+  openingScreen: {fileID: 1900497100}
   levelname: Level5
 --- !u!61 &152485719
 BoxCollider2D:
@@ -29260,7 +29262,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 880706002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.6, y: -2.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -29276,12 +29278,12 @@ Prefab:
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 496.5
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 224421536634969790, guid: 23944ee1715cd9145939c9279c2c083f,
         type: 2}
@@ -30298,12 +30300,12 @@ Prefab:
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 496.5
+      value: 384
       objectReference: {fileID: 0}
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 216
       objectReference: {fileID: 0}
     - target: {fileID: 224995351397743126, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
         type: 2}
@@ -30406,6 +30408,16 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1900497096}
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1900497100 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1284240139065740, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1900497096}
+--- !u!1 &1900497101 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1690860770017490, guid: 9711eaf3cc883bd4cb5cfb6b9f5340ef,
+    type: 2}
+  m_PrefabInternal: {fileID: 1900497096}
 --- !u!1001 &1954257744
 Prefab:
   m_ObjectHideFlags: 0

@@ -51,14 +51,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2f7f5025cbb74644b5b0807c6f7ed55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 1422482001250724, guid: 5fc1f9c3125bb2d47b3147c5dbbdb9fe, type: 2}
   food: {fileID: 1758172680639126, guid: 569924f3206e4184da41b44cf046d17f, type: 2}
   battery: {fileID: 1792684324018626, guid: 46f8edd875d8aad49aa9dbfff9f92ca6, type: 2}
+  enemySpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   foodSpawnPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   batterySpawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

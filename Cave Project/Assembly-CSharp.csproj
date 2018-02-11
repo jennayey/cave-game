@@ -115,6 +115,7 @@
      <Compile Include="Assets\Scripts\Door Scripts\SPCSecondaryDoor.cs" />
      <Compile Include="Assets\Scripts\ElevatorControlelr.cs" />
      <Compile Include="Assets\Scripts\ElevatorTrigger.cs" />
+     <Compile Include="Assets\Scripts\Ending.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyAttack.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMovement.cs" />

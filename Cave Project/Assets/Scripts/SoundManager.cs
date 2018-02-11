@@ -20,8 +20,19 @@ public class SoundManager : MonoBehaviour {
 
 	}
 
+	void Update () {
+		if (PauseMenu.gameIsPaused) {
+			musicBG.volume =.25f;
+		}
+		else if (!PauseMenu.gameIsPaused) {
+			musicBG.volume=1.0f;
+		}
+	}
+
 	public void PlaySingle (AudioClip clip) {
 		musicSFX.clip = clip; 
 		musicSFX.Play();
 	}
+
+	
 }
