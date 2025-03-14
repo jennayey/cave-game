@@ -1,6 +1,8 @@
-# cave-game
-This is a repository of my first game made in unity.
-CAVE-GAME / SOMBER
+# Somber: A 2D Adventure Game
+Somber is a 2D top down adventure game. You play as Omar, a man trapped in a dark dungeon. Collect batteries, find food bars and search for keys to escape the dark dungeon! 
+
+---
+
 Game Timeline: 
 
 DECEMBER 19 2017 - started making assets
